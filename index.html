@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท จุฬาลงกรณ์มหาวิทยาลัย" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0d1721;           /* พื้นหลักเข้ม */
+      --bg2:#121c26;          /* พื้นรอง */
+      --card:#1a2430;
+      --accent:#d6a85c;       /* ทอง */
+      --ink:#ffffff;
+      --muted:rgba(255,255,255,.65);
+      --line:rgba(255,255,255,.08);
+      --radius:16px;
+      --shadow:0 18px 45px rgba(0,0,0,.25);
+      --container:1180px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family:"Kanit",system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      line-height:1.7;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{
+      width:100%;
+      max-width:var(--container);
+      margin:0 auto;
+      padding:0 1.25rem;
+    }
+    /* NAVBAR */
+    .topbar{
+      background:rgba(13,23,33,.3);
+      backdrop-filter:blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.05);
+      position:sticky;
+      top:0;
+      z-index:40;
+    }
+    .nav-wrap{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      height:70px;
+      gap:16px;
+    }
+    .brand{
+      display:flex;
+      gap:12px;
+      align-items:center;
+    }
+    .brand-icon{
+      width:46px;height:46px;
+      background:linear-gradient(160deg,rgba(214,168,92,1),rgba(214,168,92,.35));
+      border-radius:12px;
+      display:grid;place-items:center;
+      font-weight:700;
+      font-size:14px;
+      color:#0d1721;
+    }
+    .brand-title{font-weight:600;font-size:1.05rem}
+    .nav-links{
+      display:flex;
+      gap:18px;
+      align-items:center;
+      font-size:.9rem;
+    }
+    .nav-links a{
+      color:var(--muted);
+      transition:.2s;
+    }
+    .nav-links a.active,
+    .nav-links a:hover{
+      color:var(--ink);
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:.4rem;
+      border:none;
+      background:var(--accent);
+      color:#0d1721;
+      font-weight:600;
+      padding:.65rem 1.3rem;
+      border-radius:.6rem;
+      cursor:pointer;
+      transition:.2s;
+    }
+    .btn:hover{filter:brightness(1.05)}
+    /* HERO */
+    .hero{
+      background:url("https://images.unsplash.com/photo-1589998059171-988d887df646?auto=format&fit=crop&w=1400&q=60") center/cover no-repeat;
+      position:relative;
+      min-height:460px;
+      display:flex;
+      align-items:center;
+    }
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(90deg,#0d1721 10%,rgba(13,23,33,.3) 75%,rgba(13,23,33,0));
+    }
+    .hero-content{
+      position:relative;
+      z-index:2;
+      padding:4.5rem 0 5rem;
+      max-width:630px;
+    }
+    .hero-tag{
+      display:inline-flex;
+      gap:.4rem;
+      background:rgba(13,23,33,.4);
+      border:1px solid rgba(214,168,92,.35);
+      border-radius:999px;
+      padding:.25rem .9rem;
+      font-size:.7rem;
+      margin-bottom:1.2rem;
+      color:var(--muted);
+    }
+    .hero h1{
+      font-size:2.6rem;
+      line-height:1.1;
+      margin-bottom:1rem;
+    }
+    .hero p{
+      color:var(--muted);
+      font-size:1rem;
+      margin-bottom:1.4rem;
+    }
+    .hero-actions{
+      display:flex;
+      gap:.8rem;
+      flex-wrap:wrap;
+    }
+    /* SECTION TITLE */
+    .section{
+      padding:3.5rem 0 3.5rem;
+    }
+    .section-title{
+      font-size:1.7rem;
+      margin-bottom:.75rem;
+    }
+    .section-sub{color:var(--muted);max-width:630px}
+    /* ABOUT SECTION */
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.2fr .85fr;
+      gap:1.8rem;
+      align-items:start;
+    }
+    .about-card{
+      background:var(--bg2);
+      border:1px solid rgba(255,255,255,.02);
+      border-radius:1rem;
+      padding:1.25rem 1.25rem 1.15rem;
+      display:flex;
+      gap:1rem;
+    }
+    .icon-box{
+      width:40px;height:40px;
+      border:1px solid rgba(214,168,92,.35);
+      border-radius:.85rem;
+      display:grid;place-items:center;
+      color:var(--accent);
+      font-weight:600;
+    }
+    /* PRACTICE AREAS */
+    .grid-cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.1rem;
+      margin-top:2rem;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid rgba(255,255,255,.03);
+      border-radius:1rem;
+      padding:1.25rem 1.25rem 1.1rem;
+      transition:.25s;
+      display:flex;
+      flex-direction:column;
+      gap:.4rem;
+      min-height:162px;
+    }
+    .card:hover{
+      border:1px solid rgba(214,168,92,.35);
+      transform:translateY(-3px);
+    }
+    .card small{color:var(--muted)}
+    .card .more{
+      margin-top:auto;
+      display:inline-flex;
+      gap:.35rem;
+      align-items:center;
+      color:var(--accent);
+      font-size:.8rem;
+    }
+    /* ARTICLE LIST (จากเว็บเดิม) */
+    .article-list{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.1rem;
+      margin-top:1.45rem;
+    }
+    .article{
+      background:var(--bg2);
+      border:1px solid rgba(255,255,255,.02);
+      border-radius:1rem;
+      padding:1.05rem 1.05rem 1rem;
+      display:flex;
+      flex-direction:column;
+      gap:.5rem;
+      min-height:150px;
+    }
+    .article h4{margin:0;font-size:1.03rem;}
+    .article p{color:var(--muted);font-size:.8rem;line-height:1.4}
+    .article span.badge{
+      display:inline-block;
+      background:rgba(214,168,92,.15);
+      color:var(--accent);
+      font-size:.65rem;
+      border-radius:999px;
+      padding:.2rem .6rem;
+    }
+    /* FOOTER */
+    footer{
+      background:#0a1016;
+      padding:1.5rem 0 1.5rem;
+      text-align:center;
+      color:var(--muted);
+      font-size:.75rem;
+      border-top:1px solid rgba(255,255,255,.04);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width:1024px){
+      .about-grid{grid-template-columns:1fr}
+      .grid-cards,.article-list{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:2.25rem}
+    }
+    @media (max-width:720px){
+      .nav-links{display:none}
+      .hero{min-height:520px}
+      .grid-cards,.article-list{grid-template-columns:1fr}
+      .hero-content{max-width:100%}
+      .about-card{flex-direction:row}
+      .hero h1{font-size:2.05rem}
+      .hero-actions{flex-direction:column;align-items:flex-start}
+    }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="brand-icon">
+          <!-- โลโก้ย่อ -->
+          <svg width="26" height="26" viewBox="0 0 40 40" fill="none">
+            <path d="M7 5h26v17L20 35 7 22V5z" stroke="#0d1721" stroke-width="2.4" fill="none"/>
+            <path d="M14 11h4v10h-4zM22 11h4v6h-4z" fill="#0d1721"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">CLDM Center</div>
+          <div style="font-size:.65rem;color:var(--muted)">Construction Law & Dispute Mgmt.</div>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#practice">Practice</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="btn" onclick="scrollToSection('contact')">นัดหมาย / สอบถาม</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท</div>
+        <h1>ทีมกฎหมายและวิศวกรรมที่เข้าใจ “งานก่อสร้างไทย” มากที่สุด</h1>
+        <p>ผสานองค์ความรู้จากคณะนิติศาสตร์และเครือข่ายวิศวกรรม เพื่อช่วยหน่วยงานรัฐ เอกชน และโครงการก่อสร้าง ลดข้อพิพาท บริหารสัญญา และสร้างระบบงานที่โปร่งใส</p>
+        <div class="hero-actions">
+          <button class="btn" onclick="scrollToSection('contact')">ขอปรึกษาโครงการ</button>
+          <a href="#articles" style="color:var(--ink);opacity:.7;font-size:.85rem">ดูบทความล่าสุด →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">ศูนย์นี้เกิดขึ้นเพื่ออะไร?</h2>
+      <p class="section-sub">เพื่อลดความสูญเสียในงานก่อสร้างที่มาจาก “ข้อสัญญาไม่ชัด”, “การเปลี่ยนแปลงงาน”, “การประสานงานหลายฝ่าย” และ “การระงับข้อพิพาทที่ล่าช้า”</p>
+      <div class="about-grid" style="margin-top:1.8rem">
+        <div>
+          <div class="about-card">
+            <div class="icon-box">01</div>
+            <div>
+              <h3 style="margin:0">แหล่งองค์ความรู้เฉพาะทาง</h3>
+              <p style="margin:.3rem 0 0;color:var(--muted)">รวบรวมกรณีศึกษา มาตรฐานสัญญา และแนวปฏิบัติของไทยและต่างประเทศ</p>
+            </div>
+          </div>
+          <div class="about-card" style="margin-top:1rem">
+            <div class="icon-box">02</div>
+            <div>
+              <h3 style="margin:0">เชื่อมกฎหมายกับวิศวกรรม</h3>
+              <p style="margin:.3rem 0 0;color:var(--muted)">ทำให้ข้อกำหนดทางเทคนิคแปลงเป็นภาษากฎหมายที่ตรวจสอบได้</p>
+            </div>
+          </div>
+          <div class="about-card" style="margin-top:1rem">
+            <div class="icon-box">03</div>
+            <div>
+              <h3 style="margin:0">อบรมและบริการวิชาการ</h3>
+              <p style="margin:.3rem 0 0;color:var(--muted)">รองรับหน่วยงานรัฐ ภาคเอกชน และมืออาชีพด้านงานก่อสร้าง</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="background:linear-gradient(180deg,rgba(214,168,92,.08),rgba(214,168,92,0));border:1px solid rgba(214,168,92,.2);border-radius:1rem;padding:1rem 1.1rem 1.1rem;">
+            <h3 style="margin-top:0">ข้อมูลติดต่อ</h3>
+            <p style="color:var(--muted);margin:.2rem 0 .65rem">คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</p>
+            <p style="margin:.3rem 0">📞 0-0000-0000</p>
+            <p style="margin:.3rem 0">✉️ cldm@chula.ac.th</p>
+            <p style="margin:.3rem 0">📍 ปทุมวัน กรุงเทพฯ</p>
+            <p style="margin:1rem 0 .3rem;font-size:.75rem;color:var(--muted);">รองรับการจัดอบรม in-house / public / ที่ปรึกษาโครงการ</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICE AREAS -->
+  <section class="section" id="practice" style="background:radial-gradient(circle at top, rgba(214,168,92,.09), rgba(13,23,33,1) 58%);">
+    <div class="container">
+      <h2 class="section-title">บริการ / ขอบเขตงานที่รองรับ</h2>
+      <p class="section-sub">ออกแบบมาเพื่อให้หน่วยงานและบริษัทก่อสร้างใช้ได้จริงในระยะสั้น และต่อยอดได้ในระยะยาว</p>
+      <div class="grid-cards">
+        <div class="card">
+          <h3>กฎหมายสัญญาก่อสร้าง</h3>
+          <small>ร่าง/ทบทวน/ปรับมาตรฐานให้สอดคล้องกับ พ.ร.บ.จัดซื้อจัดจ้างฯ และ FIDIC</small>
+          <span class="more">ดูรายละเอียด</span>
+        </div>
+        <div class="card">
+          <h3>Construction Dispute</h3>
+          <small>วิเคราะห์ข้อพิพาท, กลไกระงับข้อพิพาท, DRB, อนุญาโตฯ</small>
+          <span class="more">ดูรายละเอียด</span>
+        </div>
+        <div class="card">
+          <h3>Training & Workshop</h3>
+          <small>หลักสูตรสำหรับฝ่ายกฎหมาย วิศวกรควบคุมงาน ผู้รับเหมา</small>
+          <span class="more">ดูหลักสูตร</span>
+        </div>
+        <div class="card">
+          <h3>Contract Administration</h3>
+          <small>ตั้งระบบติดตามการเปลี่ยนแปลงงาน/การต่อเวลา/ค่าใช้จ่ายเพิ่ม</small>
+          <span class="more">ดูระบบ</span>
+        </div>
+        <div class="card">
+          <h3>ฐานข้อมูลคดีตัวอย่าง</h3>
+          <small>ทำฐานข้อมูลข้อพิพาทในงานก่อสร้างของไทยให้ค้นหาได้</small>
+          <span class="more">ดูตัวอย่าง</span>
+        </div>
+        <div class="card">
+          <h3>ที่ปรึกษาโครงการ</h3>
+          <small>เข้าไปร่วมประชุมกับทีมโครงการจริง รายเดือน/รายเคส</small>
+          <span class="more">ติดต่อเรา</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ARTICLES (ดึงจากเว็บเก่า) -->
+  <section class="section" id="articles">
+    <div class="container">
+      <h2 class="section-title">บทความล่าสุดจากศูนย์</h2>
+      <p class="section-sub">คอนเทนต์ด้านกฎหมายก่อสร้าง ข้อพิพาท และการบริหารสัญญาที่ผลิตจากระบบอัตโนมัติ + กลั่นโดยผู้เชี่ยวชาญ</p>
+      <div class="article-list" id="articleList">
+        <!-- จะถูกเติมด้วย JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact" style="background:var(--bg2);">
+    <div class="container">
+      <h2 class="section-title">แจ้งหัวข้อที่ต้องการอบรม/ขอคำปรึกษา</h2>
+      <p class="section-sub">ส่งหัวข้อสั้น ๆ มาให้เรา แล้วทีมงานจะประเมินวิทยากร ระยะเวลา และงบประมาณให้</p>
+      <form id="contactForm" style="margin-top:1.5rem;max-width:630px;display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+        <div>
+          <label>ชื่อ-สกุล</label>
+          <input name="name" required style="width:100%;padding:.6rem .65rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.06);color:var(--ink);" />
+        </div>
+        <div>
+          <label>อีเมล / เบอร์โทร</label>
+          <input name="contact" required style="width:100%;padding:.6rem .65rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.06);color:var(--ink);" />
+        </div>
+        <div style="grid-column:1/-1">
+          <label>หัวข้อที่สนใจ</label>
+          <textarea name="topic" rows="3" style="width:100%;padding:.6rem .65rem;border-radius:.6rem;border:1px solid rgba(255,255,255,.06);background:rgba(0,0,0,.06);color:var(--ink);"></textarea>
+        </div>
+        <div style="grid-column:1/-1">
+          <button class="btn" type="submit">ส่งเรื่องให้ศูนย์ติดต่อกลับ</button>
+          <span id="formMsg" style="margin-left:1rem;font-size:.82rem;"></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท • คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย
+  </footer>
+
+  <script>
+    // --------- ดึงข้อมูลจาก "เว็บเก่า" (เราจะจำลองเป็น data object) ----------
+    const oldSiteArticles = [
+      {
+        title: "การจัดการข้อพิพาทในสัญญาก่อสร้างภาครัฐ: ป้องกันตั้งแต่ต้นน้ำ",
+        desc: "สรุปแนวคิดและขั้นตอนที่ช่วยลดความเสี่ยงข้อพิพาท เมื่อต้องทำงานกับภาครัฐและงบประมาณจำกัด",
+        tag: "Construction Dispute"
+      },
+      {
+        title: "3 กลไกระงับข้อพิพาทที่หน่วยงานไทยใช้ได้จริง",
+        desc: "เปรียบเทียบการเจรจา DRB และอนุญาโตฯ พร้อมตัวอย่างสถานการณ์ที่เหมาะสม",
+        tag: "Dispute Management"
+      },
+      {
+        title: "Checklist ก่อนออกแบบ TOR งานก่อสร้าง",
+        desc: "TOR ที่ดีช่วยลดการเปลี่ยนแปลงงานและค่าใช้จ่ายบานปลาย ดูรายการตรวจสอบก่อนออกประกวดราคา",
+        tag: "Contract Admin"
+      }
+    ];
+
+    const articleListEl = document.getElementById("articleList");
+    oldSiteArticles.forEach(a => {
+      const el = document.createElement("article");
+      el.className = "article";
+      el.innerHTML = `
+        <span class="badge">${a.tag}</span>
+        <h4>${a.title}</h4>
+        <p>${a.desc}</p>
+        <a href="#contact" style="color:var(--accent);font-size:.78rem;">ขอเอกสารฉบับเต็ม →</a>
+      `;
+      articleListEl.appendChild(el);
+    });
+
+    // --------- Scroll helper ----------
+    function scrollToSection(id){
+      const el = document.getElementById(id);
+      if(el) el.scrollIntoView({behavior:"smooth"});
+    }
+
+    // --------- ฟอร์มติดต่อ ----------
+    const contactForm = document.getElementById("contactForm");
+    const formMsg = document.getElementById("formMsg");
+    contactForm.addEventListener("submit", e => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(contactForm).entries());
+      console.log("ส่งข้อมูลไป Make / LINE / WP:", data);
+      formMsg.textContent = "ส่งข้อมูลเรียบร้อย ทีมงานจะติดต่อกลับครับ";
+      formMsg.style.color = "#d6a85c";
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>
