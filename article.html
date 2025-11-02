@@ -87,6 +87,43 @@
       .article-layout { grid-template-columns: 1fr; }
       .article-aside { position: relative; top: 0; }
     }
+    @media (max-width: 960px) {
+  .container {
+    display: block !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+  }
+  .article-layout {
+    grid-template-columns: 1fr !important;
+  }
+  .article-aside {
+    position: relative !important;
+    top: 0 !important;
+    margin-top: 2rem;
+  }
+  .sticky-cta .wrap {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+}
+/* รูปในบทความห้ามล้นกรอบ */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+/* กัน margin รูปชนขอบมือถือ */
+@media (max-width: 640px) {
+  .article-content {
+    padding: 16px !important;
+  }
+  .article-content img {
+    width: 100%;
+  }
+}
+
   </style>
 </head>
 <body class="article-page">
