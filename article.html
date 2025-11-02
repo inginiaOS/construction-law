@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>การจัดการข้อพิพาทในสัญญาก่อสร้างภาครัฐ | ศูนย์กฎหมายก่อสร้าง</title>
+  <meta name="description" content="หน้าเดโมบทความ + ฟันเนลเก็บลีด สำหรับศูนย์กฎหมายก่อสร้าง" />
+
+  <!-- ✅ ใช้ CSS หลัก -->
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    /* เพิ่มเฉพาะสิ่งที่จำเป็นสำหรับหน้า article */
+    .article-layout {
+      display: grid;
+      grid-template-columns: 3fr 1.2fr;
+      gap: 28px;
+      margin-top: 2rem;
+    }
+    .article-content {
+      background: var(--bg-light, #fff);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+    .article-content h2 { color: var(--accent, #d6a85c); margin-top: 1.6rem; }
+    .article-aside {
+      position: sticky;
+      top: 90px;
+      align-self: start;
+      display: grid;
+      gap: 1rem;
+    }
+    .keytake, .cta-inline {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1rem;
+      background: var(--bg-alt);
+      margin: 1rem 0;
+    }
+    .progress-bar {
+      position: fixed;
+      top: 0; left: 0;
+      height: 4px;
+      background: var(--accent, #d6a85c);
+      width: 0%;
+      z-index: 999;
+      transition: width 0.2s;
+    }
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--ink-dark, #0d1721);
+      color: white;
+      border-top: 1px solid var(--line);
+      z-index: 100;
+    }
+    .sticky-cta .wrap {
+      max-width: var(--container);
+      margin: auto;
+      padding: 14px 18px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .modal {
+      position: fixed; inset: 0;
+      background: rgba(0,0,0,0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 120;
+    }
+    .modal.show { display: flex; }
+    .modal__dialog {
+      background: var(--bg-light, #fff);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      max-width: 700px;
+      width: 90%;
+      box-shadow: var(--shadow);
+    }
+    @media (max-width: 960px) {
+      .article-layout { grid-template-columns: 1fr; }
+      .article-aside { position: relative; top: 0; }
+    }
+  </style>
+</head>
+<body class="article-page">
+  <!-- progress bar -->
+  <div class="progress-bar" id="progressBar"></div>
+
+  <!-- ใช้ header เดิมจาก style.css -->
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <div class="brand">
+        <div class="brand-icon"></div>
+        <div>
+          <div class="brand-title">CLDM Center</div>
+          <div class="brand-sub">Construction Law & Dispute Mgmt.</div>
+        </div>
+      </div>
+      <a href="index.html" class="btn nav-cta">← กลับหน้าหลัก</a>
+    </div>
+  </header>
+
+  <main class="container" style="padding-top:3rem; padding-bottom:5rem;">
+    <div class="meta muted">บทความ • การบริหารสัญญา • ใช้เวลาอ่าน ~6 นาที</div>
+    <h1 class="section-title">การจัดการข้อพิพาทในสัญญาก่อสร้างภาครัฐ: แนวทางป้องกันตั้งแต่ต้นน้ำ</h1>
+    <p class="section-sub">แนวคิดและแนวปฏิบัติที่ช่วยลดโอกาสเกิดข้อพิพาท ตั้งแต่การกำหนดขอบเขตงาน การควบคุมการเปลี่ยนแปลงงาน การบันทึกหลักฐาน ไปจนถึงกระบวนการระงับข้อพิพาท</p>
+
+    <div class="article-layout">
+      <article class="article-content">
+        <img src="https://picsum.photos/960/420?random=5" alt="ภาพประกอบบทความ" />
+
+        <div class="keytake">
+          <strong>Key Takeaways:</strong>
+          <ul>
+            <li>กำหนดขอบเขตงานให้ชัดเจน ลดการตีความต่างกัน</li>
+            <li>ใช้ระบบ Variation Form ในการเปลี่ยนแปลงงาน</li>
+            <li>บันทึกหลักฐานและรายงานหน้างานทุกครั้ง</li>
+            <li>เลือกระบบระงับข้อพิพาทให้เหมาะกับขนาดโครงการ</li>
+          </ul>
+        </div>
+
+        <h2>1) ป้องกันข้อพิพาทตั้งแต่ร่างสัญญา</h2>
+        <p>เริ่มจาก TOR และสัญญาที่มีขอบเขตงานชัดเจน ระบุเกณฑ์คุณภาพและตัวชี้วัดความสำเร็จให้ตรวจสอบได้...</p>
+
+        <div class="cta-inline">
+          <h3>ดาวน์โหลด “เช็กลิสต์สัญญาก่อสร้างภาครัฐ (PDF)”</h3>
+          <p class="muted">กรอกอีเมลเพื่อรับไฟล์ + ตัวอย่างข้อกำหนดแนะนำ</p>
+          <button class="btn" data-open="leadmagnet">รับเอกสารฟรี</button>
+        </div>
+
+        <h2>2) บันทึกและรายงานหน้างาน</h2>
+        <p>ระบบรายงานหน้างานเป็นเครื่องมือหลักในการลดข้อโต้แย้งระหว่างฝ่าย...</p>
+
+        <hr style="margin:2rem 0;border:none;border-top:1px solid var(--line)" />
+        <p class="muted small">© ศูนย์กฎหมายก่อสร้าง (เดโม) • อัปเดต: 2 พ.ย. 2025</p>
+      </article>
+
+      <aside class="article-aside">
+        <div class="card">
+          <h3>ลงทะเบียนความสนใจ</h3>
+          <form id="leadForm">
+            <div class="form-group"><label>ชื่อ–สกุล</label><input name="name" required></div>
+            <div class="form-group"><label>อีเมล</label><input type="email" name="email" required></div>
+            <button class="btn" type="submit">ส่งข้อมูล</button>
+            <span id="formMsg" class="muted small"></span>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>หัวข้ออบรมแนะนำ</h3>
+          <ul class="muted small" style="padding-left:18px;">
+            <li>การบริหารข้อเรียกร้อง (Claims)</li>
+            <li>Dispute Board & อนุญาโตฯ</li>
+            <li>สัญญาก่อสร้างภาครัฐ</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="sticky-cta" id="stickyCta">
+    <div class="wrap">
+      <div class="txt">ต้องการเอกสารเช็กลิสต์ + ข่าวอบรมใหม่? ลงทะเบียนเลย</div>
+      <div class="act">
+        <a href="#leadForm" class="btn">ลงทะเบียน</a>
+        <button class="btn secondary" data-open="leadmagnet">รับเอกสารฟรี</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal" id="leadModal">
+    <div class="modal__dialog">
+      <button class="btn secondary" id="modalClose">✕</button>
+      <h2>รับ “เช็กลิสต์สัญญาก่อสร้างภาครัฐ (PDF)”</h2>
+      <form id="magnetForm">
+        <label>ชื่อ–สกุล</label><input name="name" required>
+        <label>อีเมล</label><input type="email" name="email" required>
+        <button class="btn" type="submit">รับลิงก์ดาวน์โหลด</button>
+        <span id="magMsg" class="muted small"></span>
+      </form>
+    </div>
+  </div>
+
+  <!-- ✅ JS หลักของเว็บ -->
+  <script src="script.js"></script>
+  <!-- ✅ JS เพิ่มเติมเฉพาะหน้า article -->
+  <script src="article.js"></script>
+</body>
+</html>
