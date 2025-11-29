@@ -2,188 +2,563 @@
 <html lang="th">
 <head>
   <meta charset="UTF-8" />
-  <title>CLDM Center — Construction Law & Dispute</title>
+  <title>ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- ฟอนต์ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS หลัก -->
+  <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-  <!-- NAV -->
-  <header class="topbar">
-    <div class="container nav-wrap">
-      <div class="brand">
-        <div class="brand-icon">
-          <svg width="26" height="26" viewBox="0 0 40 40" fill="none">
-            <path d="M7 5h26v17L20 35 7 22V5z" stroke="#0d1721" stroke-width="2.4" fill="none"/>
-            <path d="M14 11h4v10h-4zM22 11h4v6h-4z" fill="#0d1721"/>
-          </svg>
-        </div>
-        <div>
-          <div class="brand-title">CLDM Center</div>
-          <div class="brand-sub">Construction Law & Dispute Mgmt.</div>
-        </div>
-      </div>
 
-      <!-- desktop nav -->
-      <nav class="nav-links">
-        <a href="#home" data-nav>Home</a>
-        <a href="#about" data-nav>About</a>
-        <a href="#practice" data-nav>Practice</a>
-        <a href="#articles" data-nav>Articles</a>
-        <a href="#contact" data-nav>Contact</a>
-      </nav>
-
-      <!-- mobile toggle -->
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-
-      <!-- primary btn -->
-      <button class="btn nav-cta" data-nav="#contact">นัดหมาย / สอบถาม</button>
+  <!-- HERO + NAV -->
+  <header id="home" class="hero-header">
+    <!-- โลโก้ลอยกลางด้านบน -->
+    <div class="hero-logo-floating">
+      <img
+        src="https://img2.pic.in.th/pic/logo-whitea895cee5c0fc3d61.png"
+        alt="ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท"
+      >
     </div>
 
-    <!-- mobile dropdown -->
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#home" data-nav>Home</a>
-      <a href="#about" data-nav>About</a>
-      <a href="#practice" data-nav>Practice</a>
-      <a href="#articles" data-nav>Articles</a>
-      <a href="#contact" data-nav>Contact</a>
+    <div class="hero-inner">
+      <!-- NAV -->
+      <nav class="hero-nav">
+        <button class="nav-icon nav-burger" aria-label="เมนู">
+          <span></span><span></span><span></span>
+        </button>
+
+        <ul class="hero-nav-menu">
+          <li><a href="#home" class="active">หน้าแรก</a></li>
+          <li><a href="#about">เกี่ยวกับศูนย์</a></li>
+          <li><a href="#vision-mission">วิสัยทัศน์–พันธกิจ</a></li>
+          <li><a href="#scope">ขอบเขตงาน</a></li>
+          <li><a href="/articles/">ฐานความรู้</a></li>
+          <li><a href="#training">อบรม/สัมมนา</a></li>
+          <li><a href="#contact">ติดต่อศูนย์</a></li>
+        </ul>
+
+        <button class="nav-icon nav-user" aria-label="บัญชีผู้ใช้">
+          <span class="nav-user-circle"></span>
+        </button>
+      </nav>
+
+      <!-- HERO CONTENT -->
+      <div class="hero-content">
+        <p class="hero-eyebrow">
+          CENTER FOR CONSTRUCTION LAW AND DISPUTE MANAGEMENT
+        </p>
+
+        <h1 class="hero-title-main">
+          ศูนย์เชี่ยวชาญกฎหมายก่อสร้าง<br>
+          และการจัดการข้อพิพาท
+        </h1>
+
+        <p class="hero-subtitle-main">
+          ศูนย์กลางองค์ความรู้ งานวิจัย การอบรม และการให้คำปรึกษาทางวิชาการด้านกฎหมายก่อสร้าง
+          เพื่อยกระดับระบบกฎหมายและการจัดการข้อพิพาทในประเทศไทยให้มีประสิทธิภาพ โปร่งใส และเป็นธรรม
+        </p>
+
+        <div class="hero-cta-row">
+          <button class="hero-btn-primary"
+                  onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'});">
+            ดูภาพรวมศูนย์
+          </button>
+          <a href="#knowledge" class="hero-btn-outline">
+            ดูฐานความรู้กฎหมายก่อสร้าง →
+          </a>
+        </div>
+
+        <p class="hero-meta-main">
+          หน่วยงานหลัก: คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย
+        </p>
+
+        <!-- ดอทเล็ก ๆ -->
+        <div class="hero-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+      </div>
     </div>
   </header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container">
-      <div class="hero-content">
-        <div class="hero-tag">ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท</div>
-        <h1>ทีมกฎหมาย + วิศวกรรม ที่พูดภาษาโครงการก่อสร้างได้จริง</h1>
-        <p>ลดข้อพิพาท ลดงบบานปลาย จัดระบบสัญญา และทำให้การก่อสร้างโปร่งใสขึ้น</p>
-        <div class="hero-actions">
-          <button class="btn" data-nav="#contact">ขอปรึกษาโครงการ</button>
-          <a href="#articles" data-nav class="hero-link">ดูบทความล่าสุด →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ABOUT -->
-  <section id="about" class="section">
-    <div class="container">
-      <h2 class="section-title">ศูนย์นี้ตั้งขึ้นมาเพื่ออะไร?</h2>
-      <p class="section-sub">เพื่อให้หน่วยงานรัฐ เอกชน และโครงการก่อสร้าง มีที่พึ่งด้าน “กฎหมายก่อสร้าง + การจัดการข้อพิพาท” ที่เข้าใจเทคนิคงานจริง</p>
-      <div class="about-grid">
-        <div>
+  <section id="about" class="section section-about">
+    <div class="container about-layout">
+      <!-- ภาพบรรยากาศ -->
+      <div class="about-visual">
+        <div class="about-main-img">
+          <img src="https://www.law.chula.ac.th/wp-content/uploads/2025/11/1-6.jpg.webp"
+               alt="บรรยากาศการเรียนรู้และการประชุมด้านกฎหมายก่อสร้าง">
+        </div>
+        <div class="about-thumbs">
+          <img src="https://www.law.chula.ac.th/wp-content/uploads/2025/11/0-2.jpg.webp"
+               alt="ห้องประชุมและการสัมมนา">
+          <img src="https://www.law.chula.ac.th/wp-content/uploads/2025/11/4-1.jpg.webp"
+               alt="การทำงานร่วมกันของทีมกฎหมายและวิศวกร">
+        </div>
+      </div>
+
+      <!-- คอนเทนต์ -->
+      <div class="about-content-block">
+        <div class="section-header section-header-left">
+          <div class="section-eyebrow">ABOUT THE CENTER</div>
+          <h2 class="section-title">เกี่ยวกับศูนย์เชี่ยวชาญกฎหมายก่อสร้างฯ</h2>
+          <p class="section-desc">
+            ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท จัดตั้งขึ้นภายใต้คณะนิติศาสตร์
+            จุฬาลงกรณ์มหาวิทยาลัย เพื่อทำหน้าที่เป็นศูนย์กลางด้านองค์ความรู้ งานวิจัย การอบรม
+            และบริการวิชาการที่เกี่ยวข้องกับกฎหมายก่อสร้างและการจัดการข้อพิพาทในโครงการก่อสร้าง
+          </p>
+        </div>
+
+        <div class="about-grid">
           <div class="about-card">
-            <div class="icon-box">01</div>
-            <div>
-              <h3>องค์ความรู้เฉพาะทาง</h3>
-              <p>รวมกรณีศึกษา สัญญา และข้อพิพาทในไทย</p>
+            <h3>ข้อมูลชื่อศูนย์ (ภาษาไทย–อังกฤษ)</h3>
+            <p><strong>ชื่อภาษาไทย (เสนอ):</strong><br>ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท</p>
+            <p><strong>ชื่อภาษาไทย (ชื่อย่อ/ทางเลือก):</strong><br>ศูนย์เชี่ยวชาญกฎหมายก่อสร้าง</p>
+            <p><strong>ชื่อภาษาอังกฤษ:</strong><br>Center for Construction Law and Dispute Management</p>
+            <p><strong>หน่วยงานหลัก:</strong><br>คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</p>
+          </div>
+
+          <div class="about-card about-card-list">
+            <h3>บทบาทเชิงยุทธศาสตร์ของศูนย์ฯ</h3>
+            <ul class="about-list">
+              <li>เป็นจุดศูนย์กลางด้านองค์ความรู้กฎหมายก่อสร้างในประเทศไทย</li>
+              <li>เชื่อมโยงภาควิชาการ ภาครัฐ และภาคเอกชนในงานก่อสร้าง</li>
+              <li>สนับสนุนการพัฒนากฎหมาย มาตรฐาน และสัญญาก่อสร้าง</li>
+              <li>พัฒนาศักยภาพบุคลากรด้านกฎหมายและการบริหารโครงการ</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VISION & MISSION (สไตล์แถบเข้ม) -->
+  <section id="vision-mission" class="section section-vision">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow section-eyebrow-light">VISION &amp; MISSION</div>
+        <h2 class="section-title section-title-light">วิสัยทัศน์และพันธกิจของศูนย์ฯ</h2>
+        <p class="section-desc section-desc-light">
+          มุ่งเป็นศูนย์กลางด้านกฎหมายก่อสร้างและการจัดการข้อพิพาทที่ได้รับการยอมรับในระดับชาติและนานาชาติ
+          พร้อมผลักดันระบบกฎหมายก่อสร้างให้มีประสิทธิภาพ โปร่งใส และเป็นธรรม
+        </p>
+      </div>
+
+      <div class="vision-mission-grid">
+        <div class="card card-dark">
+          <h3>วิสัยทัศน์ (Vision)</h3>
+          <p>
+            เป็นศูนย์กลางแห่งความเชี่ยวชาญด้านกฎหมายก่อสร้างและการจัดการข้อพิพาท
+            ที่มีบทบาทในการยกระดับคุณภาพของระบบกฎหมาย การบริหารสัญญา
+            และกลไกการระงับข้อพิพาทในประเทศไทยให้ทัดเทียมมาตรฐานสากล
+          </p>
+        </div>
+
+        <div class="card card-dark">
+          <h3>พันธกิจหลัก (Mission)</h3>
+          <ul class="mission-list">
+            <li>
+              <span class="bullet">1</span>
+              <span>สร้างองค์ความรู้และวิจัยเชิงลึกด้านกฎหมายก่อสร้างและข้อพิพาท</span>
+            </li>
+            <li>
+              <span class="bullet">2</span>
+              <span>จัดอบรมและหลักสูตรเฉพาะทางเพื่อพัฒนาศักยภาพบุคลากร</span>
+            </li>
+            <li>
+              <span class="bullet">3</span>
+              <span>ให้คำปรึกษาทางวิชาการแก่หน่วยงานภาครัฐและเอกชน</span>
+            </li>
+            <li>
+              <span class="bullet">4</span>
+              <span>สร้างเครือข่ายความร่วมมือกับสถาบันทั้งในและต่างประเทศ</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCOPE / OBJECTIVES (4 คอลัมน์) -->
+  <section id="scope" class="section section-scope">
+    <div class="container">
+      <div class="section-header section-header-center">
+        <div class="section-eyebrow">SCOPE &amp; CORE FUNCTIONS</div>
+        <h2 class="section-title">ขอบเขตงานและหน้าที่หลักของศูนย์ฯ</h2>
+        <p class="section-desc">
+          ศูนย์ฯ ทำหน้าที่เป็นศูนย์กลางองค์ความรู้ วิจัย ฝึกอบรม และบริการวิชาการด้านกฎหมายก่อสร้าง
+          ครอบคลุมการวิเคราะห์กฎหมายสัญญา การบริหารโครงการ และการจัดการข้อพิพาท
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h4>1. ศึกษา วิเคราะห์ และเผยแพร่ความรู้</h4>
+          <p>
+            ศึกษาและวิเคราะห์กฎหมายสัญญาก่อสร้าง การบริหารโครงการ และข้อพิพาท
+            พร้อมเผยแพร่บทความ เอกสารวิชาการ และคู่มือเชิงปฏิบัติการ
+          </p>
+        </div>
+        <div class="pillar-card">
+          <h4>2. วิจัยและข้อเสนอเชิงนโยบาย</h4>
+          <p>
+            จัดทำงานวิจัยและข้อเสนอเชิงนโยบายเพื่อปรับปรุงกฎหมาย ระเบียบ
+            และมาตรฐานของสัญญาก่อสร้างให้สอดคล้องกับมาตรฐานสากล
+          </p>
+        </div>
+        <div class="pillar-card">
+          <h4>3. อบรม สัมมนา และหลักสูตรเฉพาะทาง</h4>
+          <p>
+            พัฒนาและจัดหลักสูตรอบรม สัมมนา และเวิร์กช็อปสำหรับผู้ปฏิบัติงานด้านกฎหมายก่อสร้าง
+            วิศวกร และผู้บริหารโครงการ
+          </p>
+        </div>
+        <div class="pillar-card">
+          <h4>4. ให้คำปรึกษาและฐานข้อมูลคดี</h4>
+          <p>
+            ให้คำปรึกษาทางวิชาการและกฎหมายแก่หน่วยงานที่เกี่ยวข้อง
+            และจัดทำฐานข้อมูลคดีและข้อพิพาทเพื่อใช้ประกอบการวิจัยและกำหนดนโยบาย
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KNOWLEDGE BASE / ARTICLES PREVIEW -->
+  <section id="knowledge" class="section section-knowledge">
+    <div class="container">
+      <div class="section-header section-header-left">
+        <div class="section-eyebrow">KNOWLEDGE BASE</div>
+        <h2 class="section-title">ฐานความรู้กฎหมายก่อสร้างและข้อพิพาท</h2>
+        <p class="section-desc">
+          พื้นที่สำหรับรวบรวมบทความเชิงวิชาการ บทวิเคราะห์คดี ตัวอย่างข้อพิพาท
+          และเอกสารอ้างอิงด้านกฎหมายก่อสร้างและการบริหารสัญญา
+        </p>
+      </div>
+
+      <div class="knowledge-layout">
+        <!-- บทความเด่น -->
+        <article class="knowledge-feature">
+          <div class="knowledge-img-wrap">
+            <img src="https://testmaxprep.s3.us-west-2.amazonaws.com/images/web/blog/blog_image/blog_amp_what-is-construction-law.jpg"
+                 alt="ภาพอาคารและโครงการโครงสร้างพื้นฐาน">
+          </div>
+          <div class="knowledge-feature-body">
+            <div class="article-tag">บทความเด่น</div>
+            <h3 class="knowledge-feature-title">
+              กรอบกฎหมายและความเสี่ยงในสัญญาก่อสร้างขนาดใหญ่ของภาครัฐ
+            </h3>
+            <p class="knowledge-feature-text">
+              บทความที่สรุปแนวคิดสำคัญเกี่ยวกับการจัดทำสัญญา การจัดสรรความเสี่ยง
+              และข้อเสนอแบบ practical สำหรับหน่วยงานเจ้าของงานและผู้รับเหมา
+            </p>
+            <a href="/articles/" class="knowledge-feature-link">อ่านบทความในฐานความรู้ทั้งหมด →</a>
+          </div>
+        </article>
+
+        <!-- การ์ดบทความอื่น ๆ -->
+        <div class="knowledge-list">
+          <article class="article-card article-card-with-img">
+            <div class="article-thumb">
+              <img src="https://www.garibianlaw.com/wp-content/uploads/2021/06/shutterstock_530119804-1.jpg"
+                   alt="ห้องประชุมอนุญาโตตุลาการ">
+            </div>
+            <div class="article-body">
+              <div class="article-tag">ข้อพิพาทและคดีตัวอย่าง</div>
+              <div class="article-title">
+                รูปแบบข้อพิพาทที่พบบ่อยในโครงการโครงสร้างพื้นฐาน
+              </div>
+              <div class="article-meta">
+                ตัวอย่างหัวข้อสำหรับคดีศึกษาและแนวทางการจัดการข้อพิพาท
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card article-card-with-img">
+            <div class="article-thumb">
+              <img src="https://eddypaulrice.com/wp-content/uploads/2025/03/Construction-Law.jpg"
+                   alt="เอกสารสัญญาและการทบทวนข้อสัญญา">
+            </div>
+            <div class="article-body">
+              <div class="article-tag">นโยบายและมาตรฐานสัญญา</div>
+              <div class="article-title">
+                ข้อเสนอเชิงนโยบายเพื่อปรับปรุงมาตรฐานสัญญาก่อสร้างของไทย
+              </div>
+              <div class="article-meta">
+                แนวทางในการจัดทำนิติกรรมสัญญาให้สอดคล้องกับบริบทปัจจุบัน
+              </div>
+            </div>
+          </article>
+
+          <article class="article-card article-card-with-img">
+            <div class="article-thumb">
+              <img src="https://images.unsplash.com/photo-1523292562811-8fa7962a78c8?auto=format&fit=crop&w=700&q=80"
+                   alt="ทีมงานประชุมโครงการ">
+            </div>
+            <div class="article-body">
+              <div class="article-tag">เครื่องมือสำหรับผู้ปฏิบัติงาน</div>
+              <div class="article-title">
+                Checklist ทางกฎหมายสำหรับผู้บริหารโครงการก่อสร้าง
+              </div>
+              <div class="article-meta">
+                โครงร่างหัวข้อสำหรับเอกสารแนวปฏิบัติและคู่มือในอนาคต
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAINING / SEMINARS — PREMIUM SECTION -->
+<section id="training" class="section section-training-premium">
+  <div class="container">
+    <!-- หัวข้อหลัก -->
+    <div class="training-head">
+      <div class="section-eyebrow">TRAINING &amp; SEMINARS</div>
+      <h2 class="section-title">การอบรม สัมมนา และหลักสูตรเฉพาะทาง</h2>
+      <p class="section-desc">
+        ศูนย์ฯ ออกแบบหลักสูตรอบรมเชิงลึกด้านกฎหมายก่อสร้าง การบริหารสัญญา
+        และการจัดการข้อพิพาท สำหรับผู้บริหารโครงการ วิศวกร ที่ปรึกษา และนิติกร
+      </p>
+    </div>
+
+    <div class="training-grid">
+      <!-- คอลัมน์ซ้าย: โปรแกรมเด่น (เหมือน pricing card) -->
+      <article class="training-featured">
+        <div class="training-featured-tag">โครงการอบรมที่เปิดรับสมัคร</div>
+
+        <div class="training-featured-media">
+          <img
+            src="https://img2.pic.in.th/pic/IMG_7785dadceaf62ae0e545.webp"
+            alt="บรรยากาศการอบรมกฎหมายก่อสร้าง"
+          >
+          <div class="training-featured-pill">รุ่นที่ 5</div>
+        </div>
+
+        <div class="training-featured-body">
+          <h3 class="training-featured-title">
+            ปัญหาข้อพิพาทในสัญญาก่อสร้าง (Intensive Workshop)
+          </h3>
+          <p class="training-featured-sub">
+            หลักสูตรเข้มข้น 1 วันเต็ม สำหรับผู้บริหารโครงการ ผู้จัดการสัญญา วิศวกร
+            และนิติกรที่ต้องรับมือกับข้อพิพาทในโครงการก่อสร้างจริง
+          </p>
+
+          <div class="training-featured-meta">
+            <div class="training-meta-item">
+              <span class="training-meta-label">วันอบรม</span>
+              <span class="training-meta-value">30-31 มกราคม 2569</span>
+            </div>
+            <div class="training-meta-item">
+              <span class="training-meta-label">สถานที่</span>
+              <span class="training-meta-value">คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</span>
+            </div>
+            <div class="training-meta-item">
+              <span class="training-meta-label">ค่าลงทะเบียน</span>
+              <span class="training-meta-price">15,900 บาท / คน</span>
+              <span class="training-meta-note">*ราคานี้รวม vat 7% แล้ว</span>
             </div>
           </div>
-          <div class="about-card">
-            <div class="icon-box">02</div>
-            <div>
-              <h3>กฎหมาย + วิศวะ</h3>
-              <p>แปลงข้อเทคนิคเป็นข้อกฎหมายที่อ้างอิงได้</p>
+
+          <div class="training-featured-footer">
+            <a href="#" class="training-cta-main">
+              ดูรายละเอียดโครงการและกำหนดการอบรม
+            </a>
+            <a href="#" class="training-cta-secondary">
+              ดาวน์โหลดกำหนดการ (PDF)
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- คอลัมน์ขวา: รายการหลักสูตรอื่น ๆ / ที่จะเปิดในอนาคต -->
+      <aside class="training-program-list">
+        <h3 class="training-list-title">หลักสูตรอื่น ๆ และกำลังจะเปิดรับสมัคร</h3>
+
+        <div class="training-program-item">
+          <div class="training-program-row">
+            <span class="training-program-label training-program-upcoming">
+              กำลังเปิดรับสมัคร
+            </span>
+            <span class="training-program-date">ตัวอย่าง: กันยายน 2568</span>
+          </div>
+          <h4 class="training-program-name">
+            พื้นฐานกฎหมายสัญญาก่อสร้างสำหรับผู้บริหารโครงการ
+          </h4>
+          <p class="training-program-desc">
+            ปูพื้นฐานโครงสร้างสัญญา เงื่อนไขสำคัญ และความเสี่ยงด้านกฎหมายที่ผู้บริหารต้องรู้
+          </p>
+          <div class="training-program-meta">
+            <span class="training-program-tag">1 วัน</span>
+            <span class="training-program-tag">เหมาะสำหรับเจ้าของโครงการ / PM</span>
+          </div>
+          <a href="#" class="training-program-link">ดูรายละเอียดหลักสูตรนี้ →</a>
+        </div>
+
+        <div class="training-program-item">
+          <div class="training-program-row">
+            <span class="training-program-label training-program-planned">
+              วางแผนจัดในปีถัดไป
+            </span>
+            <span class="training-program-date">ตัวอย่าง: ไตรมาส 1 / 2569</span>
+          </div>
+          <h4 class="training-program-name">
+            เวิร์กช็อปการวิเคราะห์เงื่อนไขสัญญาและความเสี่ยงทางกฎหมาย
+          </h4>
+          <p class="training-program-desc">
+            workshop ลงเคสจริง วิเคราะห์ประเด็นเสี่ยงในสัญญาก่อสร้างขนาดใหญ่
+            และแนวทางลดความเสี่ยง
+          </p>
+          <div class="training-program-meta">
+            <span class="training-program-tag">2 วัน</span>
+            <span class="training-program-tag">Workshop เชิงปฏิบัติ</span>
+          </div>
+          <a href="#" class="training-program-link">ลงทะเบียนรับข่าวการเปิดรุ่น →</a>
+        </div>
+
+        <div class="training-program-item training-program-past">
+          <div class="training-program-row">
+            <span class="training-program-label training-program-finished">
+              จัดมาแล้ว
+            </span>
+            <span class="training-program-date">ตัวอย่าง: มีนาคม 2568</span>
+          </div>
+          <h4 class="training-program-name">
+            การระงับข้อพิพาทด้วยอนุญาโตตุลาการและ ADR
+          </h4>
+          <p class="training-program-desc">
+            สรุปแนวทางการใช้อนุญาโตตุลาการและวิธีการระงับข้อพิพาททางเลือกในงานก่อสร้าง
+          </p>
+          <a href="#" class="training-program-link">
+            ดูตัวอย่างหัวข้อและเอกสารประกอบ → 
+          </a>
+        </div>
+
+        <p class="training-note-bottom">
+         ***เอาไว้ใส่รายละเอียดเพิ่มเติมได้***
+        </p>
+      </aside>
+    </div>
+  </div>
+</section>
+  <!-- CONTACT (เวอร์ชันใช้งานได้ + map + ปุ่ม mailto) -->
+  <section id="contact" class="section section-contact alt">
+    <div class="container">
+      <div class="section-header section-header-left">
+        <div class="section-eyebrow">CONTACT</div>
+        <h2 class="section-title">ติดต่อศูนย์เชี่ยวชาญกฎหมายก่อสร้างฯ</h2>
+        <p class="section-desc">
+          สำหรับการติดต่อขอข้อมูลเพิ่มเติม การขอรับบริการวิชาการ หรือความร่วมมือด้านงานวิจัยและอบรม
+          สามารถติดต่อศูนย์ฯ ผ่านข้อมูลด้านล่าง หรือกรอกแบบฟอร์มออนไลน์
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- ข้อมูลติดต่อ -->
+        <div class="contact-info-block">
+          <p class="contact-line">
+            <span class="contact-label">ที่ตั้ง:</span>
+            ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท<br>
+            คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย
+          </p>
+          <p class="contact-line">
+            <span class="contact-label">อีเมล:</span>
+            <a href="mailto:info@example.law.chula.ac.th">info@example.law.chula.ac.th</a>
+          </p>
+          <p class="contact-line">
+            <span class="contact-label">โทรศัพท์:</span>
+            0-0000-0000
+          </p>
+          <p class="contact-line">
+            <span class="contact-label">เว็บไซต์คณะนิติศาสตร์:</span>
+            <a href="https://www.law.chula.ac.th" target="_blank" rel="noopener">www.law.chula.ac.th</a>
+          </p>
+
+          <div class="contact-cta-row">
+            <a href="mailto:info@example.law.chula.ac.th?subject=ติดต่อศูนย์เชี่ยวชาญกฎหมายก่อสร้างฯ"
+               class="contact-btn-primary">
+              ส่งอีเมลถึงศูนย์ฯ
+            </a>
+            <a href="#home" class="contact-btn-outline">
+              กลับไปด้านบน ↑
+            </a>
+          </div>
+        </div>
+
+        <!-- แผนที่ + ฟอร์ม (front-end เท่านั้น) -->
+        <div class="contact-box contact-box-with-map">
+          <div class="contact-map">
+            <!-- ตอนนี้ใช้ภาพ; อนาคตสามารถเปลี่ยนเป็น iframe Google Maps ได้ -->
+            <img
+              src="https://images.unsplash.com/photo-1502920917128-1aa500764b68?auto=format&fit=crop&w=900&q=80"
+              alt="แผนที่และบริบทย่านมหาวิทยาลัย"
+            >
+          </div>
+
+          <p class="contact-map-note">
+            *สามารถเปลี่ยนส่วนนี้เป็น Google Maps iframe หรือฟอร์มจาก WordPress / Google Form ได้ในอนาคต
+          </p>
+
+          <!-- ฟอร์มพื้นฐาน (ส่งผ่าน mailto ในเบื้องต้น) -->
+          <form class="contact-form"
+                action="mailto:info@example.law.chula.ac.th"
+                method="post"
+                enctype="text/plain">
+            <div class="form-row">
+              <label for="cf-name">ชื่อ–นามสกุล / หน่วยงาน</label>
+              <input id="cf-name" name="ชื่อ-นามสกุล / หน่วยงาน" type="text" required>
             </div>
-          </div>
-          <div class="about-card">
-            <div class="icon-box">03</div>
-            <div>
-              <h3>อบรม / วิจัย / ให้คำปรึกษา</h3>
-              <p>จัดหลักสูตรเฉพาะให้แต่ละองค์กร</p>
+            <div class="form-row form-row-2col">
+              <div>
+                <label for="cf-email">อีเมล</label>
+                <input id="cf-email" name="อีเมล" type="email" required>
+              </div>
+              <div>
+                <label for="cf-phone">เบอร์ติดต่อ</label>
+                <input id="cf-phone" name="เบอร์ติดต่อ" type="text">
+              </div>
             </div>
-          </div>
-        </div>
-        <div>
-          <div class="contact-box">
-            <h3>ติดต่อศูนย์</h3>
-            <p class="muted">คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</p>
-            <p>📞 0-0000-0000</p>
-            <p>✉️ cldm@chula.ac.th</p>
-            <p>📍 ปทุมวัน กรุงเทพฯ</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRACTICE -->
-  <section id="practice" class="section section-dark">
-    <div class="container">
-      <h2 class="section-title">บริการหลักของศูนย์</h2>
-      <p class="section-sub">เลือกใช้ได้แบบรายหลักสูตร รายโครงการ หรือรายเดือน</p>
-      <div class="grid-cards">
-        <div class="card">
-          <h3>กฎหมายสัญญาก่อสร้าง</h3>
-          <small>ร่าง / ทบทวน / ปรับให้ตรงระเบียบรัฐ</small>
-        </div>
-        <div class="card">
-          <h3>Construction Dispute</h3>
-          <small>วิเคราะห์ข้อพิพาท เลือกช่องทางระงับ</small>
-        </div>
-        <div class="card">
-          <h3>Training & Workshop</h3>
-          <small>สำหรับฝ่ายกฎหมาย วิศวกรควบคุมงาน ผู้รับเหมา</small>
-        </div>
-        <div class="card">
-          <h3>Contract Admin</h3>
-          <small>ตั้งระบบติดตาม VO, EOT, defect</small>
+            <div class="form-row">
+              <label for="cf-topic">หัวข้อการติดต่อ</label>
+              <select id="cf-topic" name="หัวข้อการติดต่อ">
+                <option value="ขอรับบริการวิชาการ">ขอรับบริการวิชาการ</option>
+                <option value="ขอข้อมูลเกี่ยวกับการอบรม">ขอข้อมูลเกี่ยวกับการอบรม</option>
+                <option value="ความร่วมมือด้านวิจัย">ความร่วมมือด้านวิจัย</option>
+                <option value="อื่น ๆ">อื่น ๆ</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <label for="cf-detail">รายละเอียดเพิ่มเติม</label>
+              <textarea id="cf-detail" name="รายละเอียดเพิ่มเติม" rows="3"></textarea>
+            </div>
+            <button type="submit" class="contact-btn-primary contact-btn-full">
+              ส่งข้อความผ่านอีเมล
+            </button>
+          </form>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ARTICLES -->
-  <section id="articles" class="section">
-    <div class="container">
-      <h2 class="section-title">บทความล่าสุด</h2>
-      <p class="section-sub">mock ข้อมูลจากระบบอัตโนมัติ (อนาคตค่อยผูก WP / Make)</p>
-
-      <div class="filter-row">
-        <button class="tag-btn active" data-filter="all">ทั้งหมด</button>
-        <button class="tag-btn" data-filter="dispute">ข้อพิพาท</button>
-        <button class="tag-btn" data-filter="contract">กฎหมายสัญญา</button>
-        <button class="tag-btn" data-filter="training">อบรม</button>
-      </div>
-
-      <div class="article-list" id="articleListFull">
-        <!-- JS เติมให้ -->
-      </div>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ศูนย์เชี่ยวชาญกฎหมายก่อสร้างและการจัดการข้อพิพาท • คณะนิติศาสตร์ จุฬาลงกรณ์มหาวิทยาลัย</div>
+      <div>Center for Construction Law and Dispute Management</div>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section section-light">
-    <div class="container">
-      <h2 class="section-title">แจ้งหัวข้อที่ต้องการ</h2>
-      <p class="section-sub">ส่งเรื่องมา แล้วให้ทีมติดต่อกลับ</p>
-      <form id="contactForm" class="contact-form">
-        <div class="form-group">
-          <label>ชื่อ-สกุล</label>
-          <input name="name" required>
-        </div>
-        <div class="form-group">
-          <label>อีเมล / เบอร์โทร</label>
-          <input name="contact" required>
-        </div>
-        <div class="form-group full">
-          <label>หัวข้อที่ต้องการอบรม / ปัญหาที่เจอ</label>
-          <textarea name="topic" rows="3"></textarea>
-        </div>
-        <div class="form-group full">
-          <button class="btn" type="submit">ส่งให้ศูนย์ติดต่อกลับ</button>
-          <span id="formMsg" class="form-msg"></span>
-        </div>
-      </form>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 CLDM — Construction Law & Dispute Management
   </footer>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
